@@ -1,5 +1,5 @@
-<h1 align="center">Kiri's Modding Template</h1>  
-<h5 align="center">Kiri's personal template for modding on Forge.</h5>
+<h1 align="center">Winter Island</h1>  
+<h5 align="center">A frozen island in the sky where time never passes.</h5>
 
 <p align="center">
 <a href="https://discord.tophatcat.dev">
@@ -10,15 +10,15 @@
     <img src="https://img.shields.io/badge/Website-tophatcat.dev-brightgreen.svg?style=flat"/>
 </a>  
 
-<a href="https://www.curseforge.com/minecraft/mc-mods/kiris-modding-template">
-    <img src="https://cf.way2muchnoise.eu/versions/Minecraft_kiris-modding-template_all.svg"/>
+<a href="https://www.curseforge.com/minecraft/mc-mods/winter-island">
+    <img src="https://cf.way2muchnoise.eu/versions/Minecraft_winter-island_all.svg"/>
 </a>
 
-<a href="https://www.curseforge.com/minecraft/mc-mods/kiris-modding-template">
-    <img src="https://cf.way2muchnoise.eu/full_kiris-modding-template_downloads.svg"/>
+<a href="https://www.curseforge.com/minecraft/mc-mods/winter-island">
+    <img src="https://cf.way2muchnoise.eu/full_winter-island_downloads.svg"/>
 </a>
 
-<a href="https://github.com/tophatcats-mods/kiris-modding-template/commits/dev">
-    <img src="https://img.shields.io/github/last-commit/tophatcats-mods/kiris-modding-template.svg">
+<a href="https://github.com/tophatcats-mods/winter-island/commits/dev">
+    <img src="https://img.shields.io/github/last-commit/tophatcats-mods/winter-island.svg">
 </a>  
 </p>
