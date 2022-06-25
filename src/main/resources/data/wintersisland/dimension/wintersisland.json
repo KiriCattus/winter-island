@@ -1,11 +1,11 @@
 {
-  "type": "wintersisland:wintersisland",
+  "type": "winterisland:winterisland",
   "generator": {
     "biome_source": {
       "type": "minecraft:fixed",
       "biome": "winterisland:winterisland"
     },
-    "settings": "wintersisland:wintersisland",
+    "settings": "winterisland:winterisland",
     "type": "minecraft:noise"
   }
 }
