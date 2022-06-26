@@ -1,8 +1,8 @@
 {
   "effects": "minecraft:the_nether",
   "ultrawarm": false,
-  "ambient_light": 0.0,
-  "has_skylight": false,
+  "ambient_light": 6.0,
+  "has_skylight": true,
   "has_ceiling": false,
   "infiniburn": "#minecraft:infiniburn_overworld",
   "logical_height": 256,

@@ -1,13 +1,16 @@
 {
-  "aquifers_enabled": false,
+  "ore_veins_enabled": true,
+  "disable_mob_generation": false,
+  "legacy_random_source": true,
+  "sea_level": 0,
+  "spawn_target": [],
+  "aquifers_enabled": true,
   "default_block": {
     "Name": "minecraft:stone"
   },
   "default_fluid": {
     "Name": "minecraft:air"
   },
-  "disable_mob_generation": true,
-  "legacy_random_source": true,
   "noise": {
     "height": 128,
     "min_y": 0,
@@ -130,9 +133,6 @@
     "vein_ridged": 0.0,
     "vein_toggle": 0.0
   },
-  "ore_veins_enabled": true,
-  "sea_level": 0,
-  "spawn_target": [],
   "surface_rule": {
     "type": "minecraft:block",
     "result_state": {
