@@ -28,14 +28,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(WinterIsland.MODID)
+@Mod(WinterIsland.MOD_ID)
 public class WinterIsland {
 
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "winterisland";
+    public static final String MOD_ID = "winterisland";
     public static final String NAME = "Winter Island";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LoggerFactory.getLogger(NAME);
+    public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 
     public WinterIsland() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

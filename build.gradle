@@ -69,7 +69,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', mod_id
+            //property 'forge.enabledGameTestNamespaces', mod_id
 
             // These arguments allow for optional authentication with Mojang servers.
             // If you want to authenticate, put these properties in GRADLE_HOME/gradle.properties.
@@ -96,7 +96,7 @@ minecraft {
 
             args '--singleplayer', "yes", '--nogui', "true"
 
-            property 'forge.enabledGameTestNamespaces', mod_id
+            //property 'forge.enabledGameTestNamespaces', mod_id
 
             mods.create("${mod_id}").source(sourceSets.main)
         }
@@ -113,7 +113,7 @@ minecraft {
 
             args '--singleplayer', "yes", '--nogui', "true"
 
-            property 'forge.enabledGameTestNamespaces', mod_id
+            //property 'forge.enabledGameTestNamespaces', mod_id
 
             mods.create("${mod_id}").source(sourceSets.main)
         }
