@@ -20,25 +20,32 @@
  */
 package dev.tophatcat.winterisland;
 
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(WinterIsland.MOD_ID)
 public class WinterIsland {
 
-    // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "winterisland";
-    public static final String NAME = "Winter Island";
-    // Directly reference a slf4j logger
-    public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
+
+    private static final DeferredRegister<Block> BLOCKS
+        = DeferredRegister.create(ForgeRegistries.BLOCKS, WinterIsland.MOD_ID);
+
+    public static final RegistryObject<Block> WINTER_PORTAL_BLOCK
+        = BLOCKS.register("winter_portal_block", WinterPortalBlock::new);
+
+    public static final ResourceKey<Level> WINTER_ISLAND = ResourceKey.create(Registry.DIMENSION_REGISTRY,
+        new ResourceLocation(WinterIsland.MOD_ID, "winterisland"));
 
     public WinterIsland() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        MinecraftForge.EVENT_BUS.register(this);
+        BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }
