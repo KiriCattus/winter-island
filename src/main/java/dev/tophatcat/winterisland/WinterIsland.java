@@ -20,32 +20,35 @@
  */
 package dev.tophatcat.winterisland;
 
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import dev.tophatcat.winterisland.blocks.WinterPortalBlock;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.World;
+import org.quiltmc.loader.api.ModContainer;
+import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 
-@Mod(WinterIsland.MOD_ID)
-public class WinterIsland {
+public class WinterIsland implements ModInitializer {
 
     public static final String MOD_ID = "winterisland";
+    public static final RegistryKey<World> WINTER_ISLAND = RegistryKey.of(Registry.WORLD_KEY,
+        new Identifier(WinterIsland.MOD_ID, "winterisland"));
+    public static final Block WINTER_PORTAL_BLOCK = new WinterPortalBlock();
+    public static final Block WINTER_PORTAL_FRAME_BLOCK = new Block(AbstractBlock.Settings.copy(Blocks.SNOW_BLOCK)
+        .strength(-1.0F, 3600000.0F).dropsNothing());
 
-    private static final DeferredRegister<Block> BLOCKS
-        = DeferredRegister.create(ForgeRegistries.BLOCKS, WinterIsland.MOD_ID);
-
-    public static final RegistryObject<Block> WINTER_PORTAL_BLOCK
-        = BLOCKS.register("winter_portal_block", WinterPortalBlock::new);
-
-    public static final ResourceKey<Level> WINTER_ISLAND = ResourceKey.create(Registry.DIMENSION_REGISTRY,
-        new ResourceLocation(WinterIsland.MOD_ID, "winterisland"));
 
     public WinterIsland() {
-        BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        Registry.register(Registry.BLOCK, new Identifier(WinterIsland.MOD_ID,
+            "winter_portal_block"), WINTER_PORTAL_BLOCK);
+        Registry.register(Registry.BLOCK, new Identifier(WinterIsland.MOD_ID,
+            "winter_portal_frame_block"), WINTER_PORTAL_FRAME_BLOCK);
+    }
+
+    @Override
+    public void onInitialize(ModContainer mod) {
     }
 }
