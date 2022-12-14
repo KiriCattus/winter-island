@@ -36,10 +36,6 @@
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
-    [
-      "minecraft:ice_spike",
-      "minecraft:ice_patch"
-    ],
     [],
     [
       "minecraft:ore_dirt",
@@ -69,6 +65,7 @@
       "minecraft:trees_taiga",
       "minecraft:flower_default",
       "minecraft:patch_large_fern",
+      "minecraft:patch_berry_bush",
       "minecraft:patch_grass_taiga",
       "minecraft:patch_grass_taiga_2",
       "minecraft:patch_pumpkin"

@@ -27,7 +27,8 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "dev.tophatcat.winterisland.WinterIsland"
+			"init": "dev.tophatcat.winterisland.WinterIsland",
+			"client_init": "dev.tophatcat.winterisland.client.WinterClient"
 		},
 		"depends": [
 			{
