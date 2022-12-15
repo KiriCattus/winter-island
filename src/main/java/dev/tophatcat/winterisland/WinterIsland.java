@@ -32,6 +32,7 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
@@ -43,14 +44,17 @@ import org.quiltmc.qsl.block.entity.api.QuiltBlockEntityTypeBuilder;
 public class WinterIsland implements ModInitializer {
 
     //TODO
-    //Portal: Save portal location the player entered the Winter Island dimension from so they can be returned to it.
+    //Portal Generation: Portals should generate in the overworld on the surface in cold biomes only.
     //The Workshop: Structure with portal in the top floor, multi-floor layout to fight your way up.
+    //(Only spawns in the island dim biome)
+    //Portal: Save portal location the player entered the Winter Island dimension from so they can be returned to it.
+
     //Saint Nick: Mini boss, half as hard as the wither to kill but can only be summoned.
     //Evil Elves: Elves that will try to attack the player once inside The Workshop
-    //Portal Generation: Portals should generate in the overworld on the surface in cold biomes only.
 
     //FIXME Sleep not passing time with a mixin (Up's suggestion, Up can suggest help xD)
-    //FIXME Weather never changes unless time is not fixed and cannot be changed with vanilla commands.
+    //FIXME Weather never changes unless time is not fixed and cannot be changed with vanilla commands in custom dims
+    //Solution: Per dim weather? (This also gets around Rat's no rain/snow in the overworld)
     //NOTE: THESE ARE VANILLA BUGS! We may be able to fix them with mixins...
 
     public static final String MOD_ID = "winterisland";
@@ -59,9 +63,11 @@ public class WinterIsland implements ModInitializer {
 
     public static final Block WINTER_PORTAL_BLOCK = new WinterPortalBlock();
     public static final Block WINTER_PORTAL_FRAME_BLOCK = new Block(AbstractBlock.Settings.copy(Blocks.SNOW_BLOCK)
-        .strength(-1.0F, 3600000.0F).dropsNothing());
+        .strength(-1.0F, 3600000.0F).dropsNothing().sounds(BlockSoundGroup.POWDER_SNOW));
     public static final BlockEntityType<WinterPortalBlockEntity> WINTER_PORTAL_BLOCK_ENTITY_TYPE
         = QuiltBlockEntityTypeBuilder.create(WinterPortalBlockEntity::new, WINTER_PORTAL_BLOCK).build();
+
+    //TODO Remove to bring in line with vanilla when properly finished.
     public static final Item WINTER_PORTAL_ITEM = new BlockItem(WINTER_PORTAL_BLOCK,
         new Item.Settings().group(ItemGroup.TRANSPORTATION));
     public static final Item WINTER_PORTAL_FRAME_ITEM = new BlockItem(WINTER_PORTAL_FRAME_BLOCK,

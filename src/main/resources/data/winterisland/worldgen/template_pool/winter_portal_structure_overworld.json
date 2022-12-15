@@ -1,0 +1,15 @@
+{
+  "name": "winterisland:winter_portal_structure_overworld",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "winterisland:winter_portal_structure_overworld",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

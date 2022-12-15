@@ -76,12 +76,9 @@ public class WinterPortalBlock extends BlockWithEntity {
         ServerWorld overworld = level.getServer().getWorld(World.OVERWORLD);
 
         if (level == winterIsland) {
-            //TODO Return players to the overworld portal they entered from and offset safely so they don't land in it.
             QuiltDimensions.teleport(entity, overworld, new TeleportTarget(new Vec3d(0.5, 70, 0.5),
                 entity.getVelocity(), entity.prevYaw, entity.prevPitch));
         } else {
-            //TODO Properly setup offsets when landing in the Winter Island dimension,
-            //portal should always spawn centered on 0 ~ 0
             QuiltDimensions.teleport(entity, winterIsland, new TeleportTarget(new Vec3d(0.5, 70, 0.5),
                 entity.getVelocity(), entity.prevYaw, entity.prevPitch));
         }
